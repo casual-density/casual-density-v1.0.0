@@ -1,0 +1,63 @@
+{
+  "name": "causal-density",
+  "version": "1.0.0",
+  "description": "Time as density — causal event density measurement for distributed systems. Clock-free ordering for DHT records, CRDTs, event-sourced systems, and VSE reducer algebra.",
+  "author": "James Chapman <xhecarpenxer@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/casual-density/casual-density-v1.0.0.git"
+  },
+  "bugs": {
+    "url": "https://github.com/casual-density/casual-density-v1.0.0/issues"
+  },
+  "homepage": "https://github.com/casual-density/casual-density-v1.0.0#readme",
+  "keywords": [
+    "causal",
+    "density",
+    "distributed-systems",
+    "crdt",
+    "event-sourcing",
+    "lamport-clock",
+    "hlc",
+    "hyperloglog",
+    "dht",
+    "ipfs",
+    "libp2p",
+    "vse",
+    "reducer-algebra",
+    "clock-free"
+  ],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "prepack": "npm run build",
+    "prepublishOnly": "npm run build && npm test && npm run typecheck",
+    "version": "npm run build"
+  },
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "typescript": "^5.3.0",
+    "vitest": "^1.2.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
